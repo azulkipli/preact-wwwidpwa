@@ -48,9 +48,6 @@ class Home extends Component {
       return rssFeeds;
     }
   };
-  loading = () => {
-    return <div class="loading loading-lg" />;
-  };
   render(props, {}) {
     return (
       <div id="home">
