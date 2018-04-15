@@ -1,20 +1,85 @@
-html, body {
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	background: #FAFAFA;
-	font-family: 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
-	color: #444;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #app {
-	height: 100%;
+  height: 100%;
+}
+
+#appcontainer {
+  min-height: 480px;
+  height: 100%;
+}
+
+.off-canvas .off-canvas-sidebar {
+  min-width: 14rem;
+  background: #fff;
+}
+.off-canvas .off-canvas-content {
+  padding: 0;
+}
+
+.off-canvas .off-canvas-toggle {
+  left: 0.08rem;
+  top: 0rem;
+}
+.rightpos {
+  right: 0.08rem;
+}
+
+.menu {
+  box-shadow: none;
+}
+
+.mb-2 {
+  margin-bottom: 0.4rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.footertext {
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.text-light .gh-count,
+.text-light .gh-btn {
+  color: #fff !important;
+}
+
+pre {
+  white-space: pre-line;
+  font-size: 14px;
+}
+
+.card-footer .btn,
+.card-body {
+  font-size: 0.7rem;
+}
+
+.card-subtitle {
+  font-size: 0.7rem;
+}
+.card-subtitle .author {
+  margin: 0;
+}
+.card-subtitle .pubdate {
+  font-size: 0.6rem;
+  margin: 0;
 }

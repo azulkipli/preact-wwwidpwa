@@ -27,9 +27,16 @@
     "preact-render-spy": "^1.2.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.8",
+    "@fortawesome/react-fontawesome": "0.0.18",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
-    "preact-router": "^2.5.7"
+    "preact-head": "^1.0.2",
+    "preact-router": "^2.5.7",
+    "react-lazy-load-image-component": "^1.1.1",
+    "unistore": "^3.0.4"
   },
   "jest": {
     "verbose": true,
