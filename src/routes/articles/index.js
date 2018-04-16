@@ -1,6 +1,8 @@
 import { h, Component } from "preact";
 import { route } from "preact-router";
 import { Link } from "preact-router/match";
+import Head from "preact-head";
+
 // Unistore
 import { connect } from "unistore/preact";
 import actions from "../../store/actions";
@@ -31,6 +33,7 @@ class Articles extends Component {
       if (typeof article !== "undefined") {
         markupArticle = (
           <div class="card">
+            <Head>Preact WWWIDPWA - {article.title}</Head>
             <div class="card-header">
               <div class="card-title h6">{article.title}</div>
               <div class="card-subtitle">
