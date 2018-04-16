@@ -25,7 +25,13 @@ export default class Drawer extends Component {
             <figure class="avatar" data-initial="</>" />
             <b> WWWID PWA</b>
             <div class="float-right">
-              <a class="btn btn-link-dark c-hand" onClick={props.hideDrawer} style={{ marginTop: "-0.5rem" }}>
+              <a
+                role="link"
+                aria-label="close"
+                class="btn btn-link-dark c-hand"
+                onClick={props.hideDrawer}
+                style={{ marginTop: "-0.5rem" }}
+              >
                 <FontAwesomeIcon icon={faTimes} />
               </a>
             </div>
@@ -33,21 +39,17 @@ export default class Drawer extends Component {
 
           <li class="divider" />
           <li class="menu-item">
-            <a class="c-hand" onClick={() => props.goTo("/")}>
+            <a role="link" aria-label="home" class="c-hand" onClick={() => props.goTo("/")}>
               Home
             </a>
           </li>
-          <li class="menu-item">
-            <a class="c-hand" onClick={() => props.goTo("/profile/wwwid")}>
-              My Profile
-            </a>
-          </li>
+
           <li class="divider" data-content="Categories" />
           <li class="menu-item">
             <div class="menu-badge">
               <label class="label label-primary">2</label>
             </div>
-            <a class="c-hand" href="#">
+            <a role="link" aria-label="category-1" class="c-hand" href="#">
               Favorite
             </a>
           </li>
