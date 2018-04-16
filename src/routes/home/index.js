@@ -26,13 +26,13 @@ class Home extends Component {
               <div class="card-title h6">
                 <Link href={"/articles/" + titleToSlug(item.title)}>{item.title}</Link>
               </div>
-              <div class="card-subtitle text-gray">
+              <div class="card-subtitle">
                 <p class="author">{item.author}</p>
                 <p class="pubdate">{item.pubDate}</p>
               </div>
             </div>
             <div class="card-image">
-              <img src={img350} class="img-responsive" />
+              <img src={img350} class="img-responsive" alt={titleToSlug(item.title)} />
             </div>
             <div class="card-body">{getExcerpt(item.content, 400)}</div>
             <div class="card-footer">

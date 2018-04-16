@@ -61,6 +61,7 @@ class App extends Component {
           role="button"
           style={{ fontSize: "1rem" }}
           onClick={props.toggleDrawer}
+          aria-label="drawer"
         >
           <FontAwesomeIcon icon={faBars} />
         </button>

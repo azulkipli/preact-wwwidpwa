@@ -33,7 +33,7 @@ class Articles extends Component {
           <div class="card">
             <div class="card-header">
               <div class="card-title h6">{article.title}</div>
-              <div class="card-subtitle text-gray">
+              <div class="card-subtitle">
                 <p class="author">{article.author}</p>
                 <p class="pubdate">{article.pubDate}</p>
               </div>
