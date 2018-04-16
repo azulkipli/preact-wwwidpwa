@@ -38,6 +38,9 @@ body {
 .rightpos {
   right: 0.08rem;
 }
+.listFeeds {
+  padding-bottom: 50px;
+}
 #articles h1 {
   font-size: 17px;
 }
@@ -51,7 +54,7 @@ body {
   font-size: 14px;
 }
 #articles {
-  padding-bottom: 35px;
+  padding-bottom: 40px;
 }
 #articles .card-body img {
   max-width: 99.5%;

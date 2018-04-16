@@ -59,6 +59,7 @@ class App extends Component {
         <button
           class="off-canvas-toggle btn btn-transparent btn-noborder text-light"
           role="button"
+          style={{ fontSize: "1rem" }}
           onClick={props.toggleDrawer}
         >
           <FontAwesomeIcon icon={faBars} />

@@ -35,7 +35,6 @@
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
     "preact-head": "^1.0.2",
-    "preact-markup": "^1.6.0",
     "preact-router": "^2.5.7",
     "react-html-parser": "^2.0.2",
     "react-lazy-load-image-component": "^1.1.1",

@@ -23,6 +23,7 @@ export default class Header extends Component {
               class="btn btn-noborder btn-transparent text-light rightpos"
               href="https://github.com/azulkipli/preact-wwwidpwa"
               target="_blank"
+              style={{ fontSize: "1rem" }}
             >
               <FontAwesomeIcon icon={faGithubAlt} />
             </a>
