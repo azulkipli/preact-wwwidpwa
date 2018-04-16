@@ -17,9 +17,8 @@ class Home extends Component {
     let rssFeeds = [];
     if (listRSS.length > 0) {
       rssFeeds = listRSS.map(item => {
-        let img350 = item.thumbnail.replace("max/680", "max/350");
-        console.log("img350", img350);
-
+        // let img350 = item.thumbnail.replace("max/680", "max/350");
+        // console.log("img350", img350);
         return (
           <div class="card mb-2">
             <div class="card-header">
@@ -32,7 +31,7 @@ class Home extends Component {
               </div>
             </div>
             <div class="card-image">
-              <img src={img350} class="img-responsive" alt={titleToSlug(item.title)} />
+              <img src={item.thumbnail} class="img-responsive" alt={titleToSlug(item.title)} />
             </div>
             <div class="card-body">{getExcerpt(item.content, 400)}</div>
             <div class="card-footer">
