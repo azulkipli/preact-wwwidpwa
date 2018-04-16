@@ -37,14 +37,7 @@ export default class Drawer extends Component {
             </div>
           </li>
 
-          <li class="divider" />
-          <li class="menu-item">
-            <a role="link" aria-label="home" class="c-hand" onClick={() => props.goTo("/")}>
-              Home
-            </a>
-          </li>
-
-          <li class="divider" data-content="Categories" />
+          <li class="divider" data-content="CATEGORIES" />
           <li class="menu-item">
             <div class="menu-badge">
               <label class="label label-primary">2</label>

@@ -34,11 +34,6 @@ class Home extends Component {
               <img src={item.thumbnail} class="img-responsive" alt={titleToSlug(item.title)} />
             </div>
             <div class="card-body">{getExcerpt(item.content, 400)}</div>
-            <div class="card-footer">
-              <Link href={"/articles/" + titleToSlug(item.title)} class="btn btn-primary">
-                More
-              </Link>
-            </div>
           </div>
         );
       });
