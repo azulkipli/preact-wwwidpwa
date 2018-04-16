@@ -38,7 +38,24 @@ body {
 .rightpos {
   right: 0.08rem;
 }
-
+#articles h1 {
+  font-size: 17px;
+}
+#articles h2 {
+  font-size: 16px;
+}
+#articles h3 {
+  font-size: 15px;
+}
+#articles h4 {
+  font-size: 14px;
+}
+#articles {
+  padding-bottom: 35px;
+}
+#articles .card-body img {
+  max-width: 99.5%;
+}
 .menu {
   box-shadow: none;
 }
