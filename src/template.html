@@ -26,6 +26,9 @@
 </head>
 
 <body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
     <%= htmlWebpackPlugin.options.ssr({
 			url: '/'
 		}) %>
@@ -34,9 +37,7 @@
             window.fetch || document.write(
                 '<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
         </script>
-        <noscript>
-            You need to enable JavaScript to run this app.
-        </noscript>
+
 </body>
 
 </html>

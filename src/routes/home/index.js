@@ -4,8 +4,9 @@ import { Link } from "preact-router/match";
 // Unistore
 import { connect } from "unistore/preact";
 import actions from "../../store/actions";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+// import "react-lazy-load-image-component/src/effects/blur.css";
+import Image from "react-graceful-image";
 
 class Home extends Component {
   componentDidMount = () => {
@@ -31,13 +32,23 @@ class Home extends Component {
               </div>
             </div>
             <div class="card-image">
+              {/*
               <LazyLoadImage
                 effect="blur"
                 alt={item.slug}
                 delayTime={500}
                 src={item.thumbnail}
                 class="img-responsive"
-                onClick={() => props.goTo("/")}
+              />
+              */}
+              <Image
+                src={item.thumbnail}
+                width="360"
+                height="220"
+                style={{ padding: "20px" }}
+                alt={item.slug}
+                placeholderColor="#ddd"
+                retry={{ count: 15, delay: 3, accumulate: "add" }}
               />
             </div>
             <div class="card-body">{item.excerpt}</div>
