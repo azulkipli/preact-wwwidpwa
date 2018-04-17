@@ -68,8 +68,8 @@ export const getCloudinaryImage = img => {
     widthSize = 330;
     heightSize = 186;
   } else if (window.screen.width >= 360 && window.screen.width < 860) {
-    widthSize = 360;
-    heightSize = 220;
+    widthSize = 330;
+    heightSize = 186;
   } else {
     widthSize = 96;
     heightSize = 54;

@@ -43,9 +43,8 @@ class Home extends Component {
               */}
               <Image
                 src={item.thumbnail}
-                width="360"
-                height="220"
-                style={{ padding: "20px" }}
+                width="330"
+                height="186"
                 alt={item.slug}
                 placeholderColor="#ddd"
                 retry={{ count: 15, delay: 3, accumulate: "add" }}
