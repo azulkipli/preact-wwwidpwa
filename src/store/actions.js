@@ -1,4 +1,5 @@
 import createStore from "unistore";
+import { titleToSlug, slugToTitle, getId, getExcerpt, getAllCategories, getCloudinaryImage } from "../utils/helper";
 
 // If actions is a function, it gets passed the store:
 let actions = store => ({
@@ -16,7 +17,22 @@ let actions = store => ({
 
     let resfeeds = await res.json();
     if (resfeeds.status === "ok" && resfeeds.hasOwnProperty("items")) {
-      return { listRSSwwwid: resfeeds.items, loadingRSSFeed: false };
+      let listRSSwwwid = resfeeds.items.map(item => ({
+        id: getId(item.guid),
+        slug: titleToSlug(item.title),
+        title: item.title,
+        pubDate: item.pubDate,
+        author: item.author,
+        thumbnail: getCloudinaryImage(item.thumbnail),
+        categories: item.categories.map((category, index) => ({
+          id: index,
+          slug: category,
+          title: slugToTitle(category)
+        })),
+        excerpt: getExcerpt(item.description, 250),
+        description: item.description
+      }));
+      return { listRSSwwwid: listRSSwwwid, loadingRSSFeed: false };
     }
   },
 

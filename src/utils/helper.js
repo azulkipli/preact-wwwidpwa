@@ -67,15 +67,15 @@ export const getCloudinaryImage = img => {
   if (window.screen.width >= 860) {
     widthSize = 332;
     heightSize = 186;
-  } else if (window.screen.width >= 640 && window.screen.width < 860) {
-    widthSize = 250;
-    heightSize = 140;
+  } else if (window.screen.width >= 360 && window.screen.width < 860) {
+    widthSize = 360;
+    heightSize = 220;
   } else {
     widthSize = 96;
     heightSize = 54;
   }
 
-  const fetchUrl = `https://res.cloudinary.com/rizalibnu/image/fetch/c_fill,g_auto:face,h_${heightSize},w_${widthSize},fl_force_strip.progressive/f_webp/`;
+  const fetchUrl = `https://res.cloudinary.com/azulkipli/image/fetch/c_fill,g_auto:face,h_${heightSize},w_${widthSize},fl_force_strip.progressive/f_webp/`;
 
   return fetchUrl + img;
 };

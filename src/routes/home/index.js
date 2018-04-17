@@ -4,7 +4,8 @@ import { Link } from "preact-router/match";
 // Unistore
 import { connect } from "unistore/preact";
 import actions from "../../store/actions";
-import { titleToSlug, slugToTitle, getExcerpt, getAllCategories } from "../../utils/helper";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 class Home extends Component {
   componentDidMount = () => {
@@ -17,13 +18,12 @@ class Home extends Component {
     let rssFeeds = [];
     if (listRSS.length > 0) {
       rssFeeds = listRSS.map(item => {
-        // let img350 = item.thumbnail.replace("max/680", "max/350");
-        // console.log("img350", img350);
+        console.log("listRSS item: ", item);
         return (
           <div class="card mb-2">
             <div class="card-header">
               <div class="card-title h6">
-                <Link href={"/articles/" + titleToSlug(item.title)}>{item.title}</Link>
+                <Link href={"/articles/" + item.slug}>{item.title}</Link>
               </div>
               <div class="card-subtitle">
                 <p class="author">{item.author}</p>
@@ -31,9 +31,16 @@ class Home extends Component {
               </div>
             </div>
             <div class="card-image">
-              <img src={item.thumbnail} class="img-responsive" alt={titleToSlug(item.title)} />
+              <LazyLoadImage
+                effect="blur"
+                alt={item.slug}
+                delayTime={500}
+                src={item.thumbnail}
+                class="img-responsive"
+                onClick={() => props.goTo("/")}
+              />
             </div>
-            <div class="card-body">{getExcerpt(item.content, 400)}</div>
+            <div class="card-body">{item.excerpt}</div>
           </div>
         );
       });
