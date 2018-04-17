@@ -29,7 +29,7 @@ let actions = store => ({
           slug: category,
           title: slugToTitle(category)
         })),
-        excerpt: getExcerpt(item.description, 250),
+        excerpt: getExcerpt(item.description, 300),
         description: item.description
       }));
       return { listRSSwwwid: listRSSwwwid, loadingRSSFeed: false };
