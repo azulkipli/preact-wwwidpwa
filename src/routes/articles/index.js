@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import { h, render, Component, cloneElement } from "preact";
 import { route } from "preact-router";
 import { Link } from "preact-router/match";
 import Head from "preact-head";
@@ -25,26 +25,23 @@ class Articles extends Component {
 
     if (this.props.listRSSwwwid.length >= 0) {
       let article = this.props.listRSSwwwid.find(item => {
-        console.log("article title", title);
         return titleToSlug(item.title) === this.props.slug;
       });
-      console.log("article", article);
-
       if (typeof article !== "undefined") {
         markupArticle = (
-          <div class="card">
-            <Head>Preact WWWIDPWA - {article.title}</Head>
-            <div class="card-header">
-              <div class="card-title h6">{article.title}</div>
-              <div class="card-subtitle">
-                <p class="author">{article.author}</p>
-                <p class="pubdate">{article.pubDate}</p>
-              </div>
+          <div class="article">
+            <Head>
+              <title>Preact WWWIDPWA - {article.title}</title>
+            </Head>
+            <div class="article-title h6">{article.title}</div>
+            <div class="article-subtitle">
+              <p class="author">{article.author}</p>
+              <p class="pubdate">{article.pubDate}</p>
             </div>
-            <div class="card-image">
+            <div class="article-image">
               <img src={article.thumbnail} class="img-responsive" />
             </div>
-            <div class="card-body">{ReactHtmlParser(article.description)}</div>
+            <div class="article-body">{ReactHtmlParser(article.description)}</div>
           </div>
         );
 

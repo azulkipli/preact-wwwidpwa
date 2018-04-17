@@ -55,9 +55,28 @@ body {
 }
 #articles {
   padding-bottom: 40px;
+  margin: 10px auto;
 }
-#articles .card-body img {
-  max-width: 99.5%;
+.article-body {
+  overflow-wrap: break-word;
+  line-height: 1.7;
+}
+.article-image {
+  margin-left: -7px;
+  margin-right: -7px;
+  margin-bottom: 1rem;
+}
+.article-image img {
+  width: 100%;
+}
+figure {
+  margin-bottom: 1rem;
+}
+figure img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  /* margin-left: -12px; */
 }
 .menu {
   box-shadow: none;
@@ -89,16 +108,20 @@ pre {
 }
 
 .card-footer .btn,
+.article-body,
 .card-body {
   font-size: 0.7rem;
 }
 
+.article-subtitle,
 .card-subtitle {
   font-size: 0.7rem;
 }
+.article-subtitle .author,
 .card-subtitle .author {
   margin: 0;
 }
+.article-subtitle .pubdate,
 .card-subtitle .pubdate {
   font-size: 0.6rem;
   margin: 0;

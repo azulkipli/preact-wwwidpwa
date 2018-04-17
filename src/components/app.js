@@ -1,8 +1,8 @@
-import { h, Component } from "preact";
+import { h, render, Component, cloneElement } from "preact";
 import { Router, route } from "preact-router";
-import Head from "preact-head";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
+import Head from "preact-head";
 
 // Unistore
 import { connect } from "unistore/preact";
@@ -56,6 +56,11 @@ class App extends Component {
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
     return (
       <div id="app" class="off-canvas">
+        <Head>
+          <meta name="description" content="Free Web tutorials" />
+          <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+          <meta name="author" content="John Doe" />
+        </Head>
         <button
           class="off-canvas-toggle btn btn-transparent btn-noborder text-light"
           role="button"
@@ -65,12 +70,10 @@ class App extends Component {
         >
           <FontAwesomeIcon icon={faBars} />
         </button>
-
         <a class="off-canvas-overlay" onClick={props.hideDrawer} />
-
         <div class="off-canvas-content">
           <Header goTo={this.goTo} showModal={props.showModal} />
-          <div id="appcontainer" class="container grid-md">
+          <div id="appcontainer" class="container">
             <Router onChange={this.handleRoute}>
               <Home path="/" />
               <Profile path="/profile/" user="me" />
