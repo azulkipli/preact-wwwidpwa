@@ -57,9 +57,9 @@ class App extends Component {
     return (
       <div id="app" class="off-canvas">
         <Head>
-          <meta name="description" content="Free Web tutorials" />
-          <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
-          <meta name="author" content="John Doe" />
+          <meta name="description" content="Progressive Web App using PreactJS" />
+          <meta name="keywords" content="pwa, preact, unistore, netlify, code-splitting, hot-reload, wwwid, medium-app" />
+          <meta name="author" content="Azul" />
         </Head>
         <button
           class="off-canvas-toggle btn btn-transparent btn-noborder text-light"
