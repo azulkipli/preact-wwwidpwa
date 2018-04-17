@@ -57,8 +57,12 @@ class App extends Component {
     return (
       <div id="app" class="off-canvas">
         <Head>
+          <title>PreactJS WWWIDPWA</title>
           <meta name="description" content="Progressive Web App using PreactJS" />
-          <meta name="keywords" content="pwa, preact, unistore, netlify, code-splitting, hot-reload, wwwid, medium-app" />
+          <meta
+            name="keywords"
+            content="pwa, preact, unistore, netlify, code-splitting, hot-reload, wwwid, medium-app"
+          />
           <meta name="author" content="Azul" />
         </Head>
         <button

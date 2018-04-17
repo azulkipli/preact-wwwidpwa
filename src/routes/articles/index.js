@@ -31,7 +31,7 @@ class Articles extends Component {
         markupArticle = (
           <div class="article">
             <Head>
-              <title>Preact WWWIDPWA - {article.title}</title>
+              <title>PreactJS WWWIDPWA - {article.title}</title>
             </Head>
             <div class="article-title h6">{article.title}</div>
             <div class="article-subtitle">
