@@ -21,6 +21,7 @@ body {
 #appcontainer {
   min-height: 480px;
   height: 100%;
+  padding: 0 10px;
 }
 
 .off-canvas .off-canvas-sidebar {
