@@ -41,14 +41,7 @@ class Home extends Component {
                 class="img-responsive"
               />
               */}
-              <Image
-                src={item.thumbnail}
-                width="330"
-                height="186"
-                alt={item.slug}
-                placeholderColor="#ddd"
-                retry={{ count: 15, delay: 3, accumulate: "add" }}
-              />
+              <Image src={item.thumbnail} width="330" height="186" alt={item.slug} placeholderColor="#ddd" />
             </div>
             <div class="card-body">{item.excerpt}</div>
           </div>
