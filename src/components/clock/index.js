@@ -1,5 +1,4 @@
 import { Component } from "preact";
-import bismillah_bulet from "../../assets/bismillah_bulet.svg";
 export default class Clock extends Component {
   constructor() {
     super();

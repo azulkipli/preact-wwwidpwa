@@ -1,7 +1,7 @@
 import { h, render, Component, cloneElement } from "preact";
 import { Router, route } from "preact-router";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import faBars from "@fortawesome/fontawesome-free-solid/faBars";
+// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+// import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import Head from "preact-head";
 
 // Unistore
@@ -72,7 +72,7 @@ class App extends Component {
           onClick={props.toggleDrawer}
           aria-label="drawer"
         >
-          <FontAwesomeIcon icon={faBars} />
+          <i class="icon icon-menu" />
         </button>
         <a class="off-canvas-overlay" onClick={props.hideDrawer} />
         <div class="off-canvas-content">
@@ -92,7 +92,7 @@ class App extends Component {
             </div>
           </footer>
         </div>
-        <Modal />
+        {/* <Modal /> */}
         <Drawer goTo={this.goTo} hideDrawer={props.hideDrawer} active={props.drawerActive} />
       </div>
     );

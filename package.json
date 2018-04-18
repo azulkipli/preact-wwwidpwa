@@ -39,6 +39,7 @@
     "preact-router": "^2.5.7",
     "react-graceful-image": "^1.2.6",
     "react-html-parser": "^2.0.2",
+    "react-lazy": "^0.5.1",
     "react-lazy-blur": "^1.0.16",
     "react-lazy-load-image-component": "^1.1.1",
     "react-lazyimg-component": "0.0.2",

@@ -1,12 +1,13 @@
-import "../spectre/dist/spectre.min.css";
-import "../spectre/dist/spectre-exp.min.css";
-
-import "./style";
-
 import App from "./components/app";
 import { createStore, Provider } from "unistore/full/preact";
 import devtools from "unistore/devtools";
 import initState from "./store/initState";
+
+import "../spectre/dist/spectre.min.css";
+import "../spectre/dist/spectre-exp.min.css";
+import "../spectre/dist/spectre-icons.min.css";
+
+import "./style";
 
 // adds memory backing to a unistore store instance:
 function addMemory(store) {
