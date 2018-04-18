@@ -41,6 +41,7 @@
     "react-html-parser": "^2.0.2",
     "react-lazy-blur": "^1.0.16",
     "react-lazy-load-image-component": "^1.1.1",
+    "react-lazyimg-component": "0.0.2",
     "react-progressive-bg-image": "^3.0.0",
     "unistore": "^3.0.4"
   },

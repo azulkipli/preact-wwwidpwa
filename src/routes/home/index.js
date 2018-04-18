@@ -6,6 +6,7 @@ import { connect } from "unistore/preact";
 import actions from "../../store/actions";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/blur.css";
+import Lazyimg, { withLazyimg } from "react-lazyimg-component";
 
 class Home extends Component {
   componentDidMount = () => {
@@ -40,7 +41,8 @@ class Home extends Component {
                 class="img-responsive"
               />
               */}
-              <img src={item.thumbnail} width="330" height="186" alt={item.slug} placeholderColor="#ddd" />
+
+              <Lazyimg className="lazy" src={item.thumbnail} alt={item.slug} />
             </div>
             <div class="card-body">{item.excerpt}</div>
           </div>
