@@ -35,6 +35,15 @@
             "value": "max-age=2628000"
           }
         ]
+      },
+      {
+        "source": "**/*.chunk.*.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2628000"
+          }
+        ]
       }
     ],
     "cleanUrls": true,
