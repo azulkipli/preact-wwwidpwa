@@ -1,8 +1,5 @@
 import { h, Component } from "preact";
 import Router from "preact-router";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import faTimes from "@fortawesome/fontawesome-free-solid/faTimes";
-import faSignOutAlt from "@fortawesome/fontawesome-free-solid/faSignOutAlt";
 
 export default class Drawer extends Component {
   isActive = pathname => {
@@ -32,7 +29,7 @@ export default class Drawer extends Component {
                 onClick={props.hideDrawer}
                 style={{ marginTop: "-0.5rem" }}
               >
-                <FontAwesomeIcon icon={faTimes} />
+                X
               </a>
             </div>
           </li>

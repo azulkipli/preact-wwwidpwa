@@ -38,9 +38,6 @@ class Articles extends Component {
               <p class="author">{article.author}</p>
               <p class="pubdate">{article.pubDate}</p>
             </div>
-            <div class="article-image">
-              <img src={article.thumbnail} class="img-responsive" />
-            </div>
             <div class="article-body">{ReactHtmlParser(article.description)}</div>
           </div>
         );

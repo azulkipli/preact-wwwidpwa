@@ -1,11 +1,5 @@
 import { h, Component } from "preact";
 import { Link } from "preact-router/match";
-// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-// import faBars from "@fortawesome/fontawesome-free-solid/faBars";
-// import faMediumM from "@fortawesome/fontawesome-free-brands/faMediumM";
-// import faGithubAlt from "@fortawesome/fontawesome-free-brands/faGithubAlt";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import style from "./style";
 
 export default class Header extends Component {
