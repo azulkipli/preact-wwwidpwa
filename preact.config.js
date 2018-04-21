@@ -5,9 +5,9 @@ import asyncPlugin from "preact-cli-plugin-fast-async";
 // const preactCliSwPrecachePlugin = require("preact-cli-sw-precache");
 
 export default (config, env, helpers) => {
-  console.log("CONFIG", JSON.stringify(config.preload));
+  console.log("CONFIG", JSON.stringify(config, null, 2));
   // console.log("ENV", JSON.stringify(env));
-
+  // config.preload = true;
   asyncPlugin(config);
 
   // const precacheConfig = {

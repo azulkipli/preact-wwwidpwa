@@ -4,8 +4,8 @@ import devtools from "unistore/devtools";
 import initState from "./store/initState";
 
 import "../spectre/dist/spectre.min.css";
-import "../spectre/dist/spectre-exp.min.css";
-import "../spectre/dist/spectre-icons.min.css";
+// import "../spectre/dist/spectre-exp.min.css";
+// import "../spectre/dist/spectre-icons.min.css";
 
 import "./style";
 

@@ -4,11 +4,11 @@ Progressive Web App (PWA) using preactjs and spectre-css for [wwwidpwa](https://
 
 ## Demo
 
-https://preact-wwwidpwa.netlify.com
+https://preact-w3idpwa.firebaseapp.com/
 
 ## Test results
 
-* [webpagetest.org](http://www.webpagetest.org/result/180416_5B_3edf8bd92a6d28a18df0c9f99900ce3b/)
+* [webpagetest.org](http://www.webpagetest.org/result/180421_K9_28882308889f8b5c24bff7673968c74b/)
 
 ## CLI Commands
 
