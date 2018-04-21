@@ -1,11 +1,23 @@
 import { h, Component } from "preact";
 import { Link } from "preact-router/match";
-import style from "./style";
+// import style from "./style";
+
+const headerSt = {
+  backgroundColor: "#3b1f6d",
+  padding: "0.4rem 0"
+};
+const headcolorSt = {
+  color: "#3b1f6d"
+};
+const rightLinkSt = {
+  marginRight: "0.4rem",
+  fontSize: "1rem"
+};
 
 export default class Header extends Component {
   render(props, {}) {
     return (
-      <div id="header" class={style.header}>
+      <div id="header" style={headerSt}>
         <header class="navbar">
           <section class="navbar-section text-primary">...</section>
           <section class="navbar-center">
@@ -21,7 +33,7 @@ export default class Header extends Component {
               role="button"
               aria-label="github"
               rel="noopener"
-              style={{ fontSize: "1rem" }}
+              style={rightLinkSt}
             >
               <i class="icon icon-link" />
             </a>

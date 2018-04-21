@@ -22,7 +22,7 @@ class Home extends Component {
     let rssFeeds = [];
     if (listRSS.length > 0) {
       rssFeeds = listRSS.map(item => {
-        console.log("listRSS item: ", item);
+        // console.log("listRSS item: ", item);
         return (
           <div class="card" style={{ marginBottom: "10px" }}>
             <div class="card-header">

@@ -22,11 +22,6 @@ body {
   padding: 0;
 }
 
-.off-canvas .off-canvas-toggle {
-  left: 0.08rem;
-  top: 0rem;
-}
-
 #articles h1 {
   font-size: 17px;
 }
