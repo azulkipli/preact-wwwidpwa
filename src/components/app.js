@@ -33,6 +33,16 @@ const jsUcfirst = string => {
 };
 // Utils
 
+const appStyle = {
+  height: "100%"
+};
+
+const appcontainerStyle = {
+  height: "100%",
+  padding: "0 15px",
+  marginBottom: "50px"
+};
+
 class App extends Component {
   /** Gets fired when the route changes.
    *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
@@ -55,7 +65,7 @@ class App extends Component {
     const paths = currentUrl.split("/");
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
     return (
-      <div id="app" class="off-canvas">
+      <div id="app" class="off-canvas" style={appStyle}>
         <Head>
           <title>PreactJS WWWIDPWA</title>
           <meta name="description" content="Progressive Web App using PreactJS" />
@@ -77,7 +87,7 @@ class App extends Component {
         <a class="off-canvas-overlay" onClick={props.hideDrawer} />
         <div class="off-canvas-content">
           <Header goTo={this.goTo} showModal={props.showModal} />
-          <div id="appcontainer" class="container">
+          <div id="appcontainer" class="container" style={appcontainerStyle}>
             <Router onChange={this.handleRoute}>
               <Home path="/" />
               <Profile path="/profile/" user="me" />

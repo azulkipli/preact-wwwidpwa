@@ -29,7 +29,7 @@ export default class Drawer extends Component {
                 onClick={props.hideDrawer}
                 style={{ marginTop: "-0.5rem" }}
               >
-                X
+                <i class="icon icon-cross" />
               </a>
             </div>
           </li>

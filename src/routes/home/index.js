@@ -4,9 +4,12 @@ import { Link } from "preact-router/match";
 // Unistore
 import { connect } from "unistore/preact";
 import actions from "../../store/actions";
-// import { LazyLoadImage } from "react-lazy-load-image-component";
-// import "react-lazy-load-image-component/src/effects/blur.css";
 import Lazyimg, { withLazyimg } from "react-lazyimg-component";
+
+const pubdateStyle = {
+  fontSize: "0.7rem",
+  margin: "0"
+};
 
 class Home extends Component {
   componentDidMount = () => {
@@ -21,28 +24,22 @@ class Home extends Component {
       rssFeeds = listRSS.map(item => {
         console.log("listRSS item: ", item);
         return (
-          <div class="card mb-2">
+          <div class="card" style={{ marginBottom: "10px" }}>
             <div class="card-header">
-              <div class="card-title h6">
+              <div class="card-title h6" style={{ lineHeight: "1.3" }}>
                 <Link href={"/articles/" + item.slug}>{item.title}</Link>
               </div>
               <div class="card-subtitle">
-                <p class="author">{item.author}</p>
-                <p class="pubdate">{item.pubDate}</p>
+                <div class="author" style={pubdateStyle}>
+                  {item.author}
+                </div>
+                <div class="pubdate" style={pubdateStyle}>
+                  {item.pubDate}
+                </div>
               </div>
             </div>
             <div class="card-image">
-              {/*
-              <LazyLoadImage
-                effect="blur"
-                alt={item.slug}
-                delayTime={500}
-                src={item.thumbnail}
-                class="img-responsive"
-              />
-              */}
-
-              <Lazyimg className="lazy" src={item.thumbnail} alt={item.slug} />
+              <Lazyimg className="lazy" src={item.thumbnail} alt={item.slug} style={{ width: "100%" }} />
             </div>
             <div class="card-body">{item.excerpt}</div>
           </div>
@@ -60,7 +57,7 @@ class Home extends Component {
     return (
       <div id="home">
         <h1 class="h6 my-4 text-center">Update tren pengembangan web modern</h1>
-        <div className="listFeeds p-1">{this.renderListRSS()}</div>
+        {this.renderListRSS()}
       </div>
     );
   }

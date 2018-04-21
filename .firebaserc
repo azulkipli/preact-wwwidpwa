@@ -1,5 +1,6 @@
 {
   "projects": {
-    "preact-w3idpwa": "preact-wwwidpwa"
+    "preact-w3idpwa": "preact-w3idpwa",
+    "default": "preactidpwa"
   }
 }
