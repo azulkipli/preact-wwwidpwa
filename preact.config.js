@@ -1,8 +1,6 @@
 import asyncPlugin from "preact-cli-plugin-fast-async";
-
+import preactCliSwPrecachePlugin from "preact-cli-sw-precache";
 // import Jarvis from "webpack-jarvis";
-/* the rest of your webpack configs */
-// const preactCliSwPrecachePlugin = require("preact-cli-sw-precache");
 
 export default (config, env, helpers) => {
   console.log("CONFIG", JSON.stringify(config, null, 2));
@@ -10,19 +8,16 @@ export default (config, env, helpers) => {
   // config.preload = true;
   asyncPlugin(config);
 
-  // const precacheConfig = {
-  //   staticFileGlobs: [
-  //     'app/css/**.css',
-  //     'app/**.html',
-  //     'app/images/**.*',
-  //     'app/js/**.js'
-  //   ],
-  //   stripPrefix: 'app/',
-  //   runtimeCaching: [{
-  //     urlPattern: /this\\.is\\.a\\.regex/,
-  //     handler: 'networkFirst'
-  //   }]
-  // };
+  const precacheConfig = {
+    staticFileGlobs: ["build/**.css", "build/**.css.map", "build/**.js", "build/**.js.map", "build/**.html"],
+    stripPrefix: "build/",
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/api\.rss2json\.com.*/,
+        handler: "networkFirst"
+      }
+    ]
+  };
 
-  // return preactCliSwPrecachePlugin(config, precacheConfig);
+  return preactCliSwPrecachePlugin(config, precacheConfig);
 };
