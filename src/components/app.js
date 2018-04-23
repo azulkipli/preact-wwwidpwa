@@ -76,8 +76,13 @@ class App extends Component {
           />
           <meta name="author" content="Azul" />
         </Head>
-        <header>WWWID</header>
-        <label for="drawer-checkbox" class="button drawer-toggle" />
+        <header>
+          <label for="drawer-checkbox" class="button drawer-toggle" />
+          <Link class="logo" href="/">
+            WWWID
+          </Link>
+        </header>
+        <label for="drawer-checkbox" />
         <input type="checkbox" id="drawer-checkbox" aria-label="btnDrawer" name="btndrawer" />
         <div class="drawer">
           <label for="drawer-checkbox" class="close" />
@@ -88,7 +93,7 @@ class App extends Component {
           <Articles path="/articles/:slug" />
           <Error type="404" default />
         </Router>
-        <footer class="sticky">
+        <footer>
           <Clock />
         </footer>
       </div>
