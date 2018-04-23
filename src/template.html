@@ -10,26 +10,39 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-    <link rel="preconnect" href="https://preact-w3idpwa.firebaseapp.com/">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://api.rss2json.com" crossorigin>
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://cdn-images-1.medium.com">
+    <!-- Preload     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/2.3.7/mini-default.min.css" as="style" onload="this.rel='stylesheet'" media="(min-width: 20em)">    
+    -->
+
     <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
         <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
+    <% } %>
+
+    <% for (var chunk of webpack.chunks) { %>
+        <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
+            <% for (var file of chunk.files) { %>
+                <% if (htmlWebpackPlugin.options.preload && file.match(/\.(js)$/)) { %>
+                    <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+                <% } else if (file.match(/\.(css)$/)) { %>
+                    <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="style" media="(min-width: 20em)">
+                <% } else if (file.match(/manifest\.json$/)) { %>
+                <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
+            <% } %>
         <% } %>
-            <% for (var chunk of webpack.chunks) { %>
-                <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
-                    <% for (var file of chunk.files) { %>
-                        <% if (htmlWebpackPlugin.options.preload && file.match(/\.(js|css)$/)) { %>
-                            <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
-                            <% } else if (file.match(/manifest\.json$/)) { %>
-                                <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
-                                <% } %>
-                                    <% } %>
-                                        <% } %>
+    <% } %>
+
 </head>
 
 <body>
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/2.3.7/mini-default.min.css" as="style" onload="this.rel='stylesheet'" media="(min-width: 20em)">    
     <%= htmlWebpackPlugin.options.ssr({
 			url: '/'
 		}) %>

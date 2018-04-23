@@ -48,7 +48,7 @@ class Home extends Component {
     }
 
     if (this.props.loadingRSSFeed) {
-      return <div class="loading loading-lg" />;
+      return <div class="spinner-donut large" />;
     } else {
       return rssFeeds;
     }

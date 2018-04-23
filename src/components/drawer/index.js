@@ -16,7 +16,7 @@ export default class Drawer extends Component {
   render(props, {}) {
     const clsSidebar = props.active ? "off-canvas-sidebar active" : "off-canvas-sidebar";
     return (
-      <div id="sidebar" class={clsSidebar}>
+      <div id="sidebar" class={clsSidebar} style={{ display: "none" }}>
         <ul className="menu">
           <li>
             <figure class="avatar" data-initial="</>" />

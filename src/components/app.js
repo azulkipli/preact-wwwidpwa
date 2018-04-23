@@ -3,6 +3,7 @@ import { Router, route } from "preact-router";
 // import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 // import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import Head from "preact-head";
+import { Link } from "preact-router/match";
 
 // Unistore
 import { connect } from "unistore/preact";
@@ -11,7 +12,7 @@ import actions from "../store/actions";
 
 // Components
 import Header from "./header";
-import Drawer from "./drawer";
+// import Drawer from "./drawer";
 import Clock from "./clock";
 import Error from "./error";
 import Modal from "./modal";
@@ -19,7 +20,7 @@ import Modal from "./modal";
 // import Profile from "../routes/profile";
 import Home from "async!../routes/home";
 import Articles from "async!../routes/articles";
-import Profile from "async!../routes/profile";
+// import Profile from "async!../routes/profile";
 // Components
 
 // Hotreload
@@ -60,12 +61,12 @@ class App extends Component {
   };
 
   render(props, {}) {
-    // console.log("App props", props);
+    console.log("App Router", Router);
     const currentUrl = Router.getCurrentUrl();
     const paths = currentUrl.split("/");
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
     return (
-      <div id="app" class="off-canvas" style={appStyle}>
+      <div id="app" style={appStyle}>
         <Head>
           <title>PreactJS WWWIDPWA</title>
           <meta name="description" content="Progressive Web App using PreactJS" />
@@ -75,35 +76,21 @@ class App extends Component {
           />
           <meta name="author" content="Azul" />
         </Head>
-        <button
-          class="off-canvas-toggle btn btn-transparent btn-noborder text-light"
-          role="button"
-          style={{ fontSize: "1rem" }}
-          onClick={props.toggleDrawer}
-          aria-label="drawer"
-        >
-          <i class="icon icon-menu" />
-        </button>
-        <a class="off-canvas-overlay" onClick={props.hideDrawer} />
-        <div class="off-canvas-content">
-          <Header goTo={this.goTo} showModal={props.showModal} />
-          <div id="appcontainer" class="container" style={appcontainerStyle}>
-            <Router onChange={this.handleRoute}>
-              <Home path="/" />
-              <Profile path="/profile/" user="me" />
-              <Profile path="/profile/:user" />
-              <Articles path="/articles/:slug" />
-              <Error type="404" default />
-            </Router>
-          </div>
-          <footer class="container">
-            <div class="footertext">
-              <Clock />
-            </div>
-          </footer>
+        <header>WWWID</header>
+        <label for="drawer-checkbox" class="button drawer-toggle" />
+        <input type="checkbox" id="drawer-checkbox" aria-label="btnDrawer" name="btndrawer" />
+        <div class="drawer">
+          <label for="drawer-checkbox" class="close" />
+          <Link href="/">Home</Link>
         </div>
-        {/* <Modal /> */}
-        <Drawer goTo={this.goTo} hideDrawer={props.hideDrawer} active={props.drawerActive} />
+        <Router onChange={this.handleRoute}>
+          <Home path="/" />
+          <Articles path="/articles/:slug" />
+          <Error type="404" default />
+        </Router>
+        <footer class="sticky">
+          <Clock />
+        </footer>
       </div>
     );
   }

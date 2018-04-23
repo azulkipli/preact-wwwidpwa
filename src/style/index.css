@@ -10,18 +10,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.off-canvas .off-canvas-sidebar {
-  min-width: 14rem;
-  background: #fff;
-}
-.off-canvas .off-canvas-content {
-  padding: 0;
-}
-
 #articles h1 {
   font-size: 17px;
 }
@@ -44,9 +32,7 @@ figure img {
   max-width: 100%;
   /* margin-left: -12px; */
 }
-.menu {
-  box-shadow: none;
-}
+
 footer {
   position: fixed;
   bottom: 0;
